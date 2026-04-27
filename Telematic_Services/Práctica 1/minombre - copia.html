@@ -1,0 +1,27 @@
+
+<html manifest="cache.manifest">
+<div id="contenedor" style="width: 1250px;">
+    <div id="cabecera" style="background-color:#180cff;">
+    <h1 style="margin-bottom: 0px; background-color: #3366ff; width: 1250px;text-align: center; float: center;">Introduzca el nombre</h1>
+    </div>
+    <div id="contenido" style="background-color: #07c0ee; height: 510px; width: 1250px; text-align: center;">
+        <form>
+        <br><br><label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+        <button type="button" onclick="guardarNombre()">Guardar</button>
+    </form>
+    <script>
+        function guardarNombre() {
+            const nombreIngresado = document.getElementById("nombre").value;
+
+            localStorage.setItem("fname", nombreIngresado);
+
+            window.location.href = "index.html";
+        }
+    </script>
+    </div>
+    
+    <div id = "pie" style="background-color: rgb(83, 197, 127);clear:both;text-align:center;width: 1250px; height: -100px;"> 
+        <h1 style="margin-bottom: 20px; background-color: rgb(255, 234, 47); width: 1250px;text-align:center;height: 40px;"> Universidad de Alcalá </h1>
+     </div>
+     </html>
