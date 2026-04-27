@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css"> <!-- Asegúrate de tener el archivo de estilos CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- Incluye jQuery -->
+    
+    <h1 style="margin-bottom: 0px; background-color: rgb(236, 184, 11); width: 1270px;text-align: center; float:center;">Galería de imágenes</h1>
+    </head>
+    <body>
+        <div class="galeria-estatica" style="background-color: rgb(255, 251, 0); width: 1270px; height: 290px;">
+            <!-- Cambia las rutas de las imágenes según tu estructura de carpetas -->
+            <div class="imagen" data-nombre="Imagen 1: Borrasca en Teruel">
+                <img src="https://blog.meteoclim.com/wp-content/uploads/2021/04/TQGBN2UDIZFJVAJPQZBCNPZMWU.jpg" alt="Imagen 1" style="height: 200px;">
+            </div>
+            <div class="imagen" data-nombre="Imagen 2: Heladas en las Cataratas del Niágara">
+                <img src="https://services.meteored.com/img/article/cuales-son-los-fenomenos-tipicos-del-invierno-296091-1_1280.jpeg" alt="Imagen 2" style="height: 200px;">
+            </div>
+            <div class="imagen" data-nombre="Imagen 3: Rayos en la catedral de Fátima">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZUqxUm4ZbHQKz4U4RecusA4SWlWuwg6k-g&usqp=CAU" alt="Imagen 2" style="height: 200px;">
+            </div>
+            <div class="imagen" data-nombre="Imagen 4: Día soleado en el Doñana ">
+                <img src="https://thumbs.dreamstime.com/b/hermoso-prado-en-un-d%C3%ADa-soleado-vista-id%C3%ADlica-del-con-flores-de-amapola-naturaleza-t%C3%ADpica-polaca-el-campo-tiempo-verano-161885159.jpg" alt="Imagen 2" style="height: 200px;">
+            </div>
+            <div class="imagen" data-nombre="Imagen 5: Otoño en Burgos">
+                <img src="https://services.meteored.com/img/article/como-es-el-otono-argentina-clima-322501-3_768.jpg" alt="Imagen 2" style="height: 200px;">
+            </div>
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+    
+        <div id="info-imagen"></div>
+    <!-------------------------------Script de Jquery para las imagenes 1----------------------------------->
+        <script>
+            let timeout;
+            $(document).ready(function() {
+                $('.imagen').hover(function() {
+                    const nombreImagen = $(this).data('nombre');
+                    const rutaImagen = $(this).find('img').attr('src');
+                    const contenidoHTML = `<div><img src="${rutaImagen}" alt="${nombreImagen}" style="max-width: 500px; max-height: 500px;"><p>${nombreImagen}</p></div>`;
+                    clearTimeout(timeout);
+                    $('#info-imagen').html(contenidoHTML).css('display', 'flex');
+                }, function() {
+                    timeout = setTimeout(() => {
+                        $('#info-imagen').css('display', 'none');
+                    }, 0); // Sin tiempo de espera antes de ocultar la información
+                });
+            });
+          </script>
+          
+          <div class="galeria-desplazamiento"style="background-color: yellow; width: 1270px; height: 250px;">
+            <div class="carrusel">
+                <!-- Agrega más imágenes según sea necesario -->
+                <div class="imagen1" data-nombre="Imagen 1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLRPqE2rjAt20aK-CMYq531-sBXGkimB8PkQ&usqp=CAU" alt="Imagen 1" style="height: 200px;">
+                </div>
+                <div class="imagen1" data-nombre="Imagen 2">
+                    <img src="https://www.elagoradiario.com/wp-content/uploads/2021/01/Gran-V%C3%ADa-Madrid-nieve-Filomena.jpg" alt="Imagen 2" style="height: 200px;">
+                </div>
+                <div class="imagen1" data-nombre="Imagen 3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtTUvBUx0_3ODh75wNmhIi-nG11D-19P1IFQ&usqp=CAU" alt="Imagen 3" style="height: 200px;">
+                </div>
+                <div class="imagen1" data-nombre="Imagen 4">
+                    <img src="https://fotografias.larazon.es/clipping/cmsimages02/2023/10/13/39D8AFBE-A333-467F-A9E5-ACB6D64193CB/98.jpg?crop=3363,1892,x0,y92&width=1900&height=1069&optimize=low&format=webply" alt="Imagen 4" style="height: 200px;">
+                </div>
+                <div class="imagen1" data-nombre="Imagen 5">
+                    <img src="https://images.theconversation.com/files/448636/original/file-20220225-32314-12602cj.jpg?ixlib=rb-1.1.0&rect=0%2C160%2C6720%2C3360&q=45&auto=format&w=1356&h=668&fit=crop" alt="Imagen 5" style="height: 200px;">
+                </div>
+                <div class="imagen1" data-nombre="Imagen 6">
+                    <img src="https://e00-elmundo.uecdn.es/blogs/elmundo/elporquedelascosas/imagenes_posts/2017/05/19/184071_635x423.jpg" alt="Imagen 6" style="height: 200px;">
+                </div>
+                <div class="imagen1" data-nombre="Imagen 7">
+                    <img src="https://d7lju56vlbdri.cloudfront.net/var/ezwebin_site/storage/images/_aliases/img_1col/entrevistas/jose-miguel-vinas-los-episodios-de-tiempo-extremo-tenderan-a-ser-cada-vez-mas-frecuentes/8532538-7-esl-MX/Jose-Miguel-Vinas-Los-episodios-de-tiempo-extremo-tenderan-a-ser-cada-vez-mas-frecuentes.jpg" alt="Imagen 7" style="height: 200px;">
+                </div>
+                <div class="imagen1" data-nombre="Imagen 8">
+                    <img src="https://ichef.bbci.co.uk/news/640/amz/worldservice/live/assets/images/2014/09/25/140925150931_clima_ciudad_624x351_getty_nocredit.jpg" alt="Imagen 8" style="height: 200px;">
+                </div>
+                <div class="imagen1" data-nombre="Imagen 9">
+                    <img src="https://ichef.bbci.co.uk/news/640/amz/worldservice/live/assets/images/2016/04/13/160413165553_soleados_1_640x360_thinkstock_nocredit.jpg" alt="Imagen 9" style="height: 200px;">
+                </div>
+                <!-- Agrega más imágenes según sea necesario -->
+        </div>
+        <button id="anterior">&lt;</button>
+        <button id="siguiente">&gt;</button>
+    </div>
+    <script>
+        const carrusel = $('.carrusel');
+        const anchoImagen = 220; // Ajusta según el ancho de tus imágenes
+        let posicion = 0;
+
+        $('#anterior').on('click', function() {
+            if (posicion > 0) {
+                posicion -= anchoImagen;
+                carrusel.css('transform', `translateX(${-posicion}px)`);
+            }
+        });
+
+        $('#siguiente').on('click', function() {
+            const limite = (carrusel.children().length - 3) * anchoImagen; // Muestra 3 imágenes a la vez
+            if (posicion < limite) {
+                posicion += anchoImagen;
+                carrusel.css('transform', `translateX(${-posicion}px)`);
+            }
+        });
+    </script>
+
+    
+        <div id="info-imagen"></div>
+    
+        <div id="pie" style="background-color:rgb(221, 218, 8);clear:both;text-align:center;height: 45px; width: 1280px;">
+        <a href="index.html">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Universidad_de_Alcal%C3%A1_%282021%29_logotipo_azul.svg/1824px-Universidad_de_Alcal%C3%A1_%282021%29_logotipo_azul.svg.png" alt="Descripción de la imagen"width="40"height="40">
+     </a>
+     
+     </div>
+    </body>
+    </html>

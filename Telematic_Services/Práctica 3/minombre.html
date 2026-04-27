@@ -1,0 +1,111 @@
+
+<html manifest="cache.manifest" lang="es">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div id="contenedor"style="width: 1250px;">
+    <div id="cabecera" style="background-color:#180cff;">
+    <h1 style="margin-bottom: 0px; background-color: #3366ff; width: 1250px;text-align: center; float:center;">Introduzca el nombre</h1>
+    </div>
+
+    <div class="contenido" style="background-color: #ffffff; height: 515px; width: 1250px; text-align: center;">
+        <img src="https://iscariv.uah-gipi.org/wp-content/themes/lbm-child-theme/images/patrocinador-universidad-de-alcala.jpg" class="marca-de-agua" width="1250px"height="535px" alt="Marca de agua">
+        <form>
+        <br><br><label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingresa tu nombre"><br><br><br>
+        Dirección de Correo Electrónico: <input type="text"placeholder="Ejemplo@dominio.com" id="emailInput"><br><br><br><br>
+        <button type="button" class="button" onclick="procesardatos()">Enviar</button><br><br><br>
+        Dirección de Correo Electrónico (Expr_Reg): <input type="text"placeholder="Ejemplo@dominio.com" id="emailInput2"><br><br><br><br>
+        <button type="button" class="button" onclick="procesardatos2()">Enviar (Expr_Reg)</button><br><br><br>
+    </form>
+<!--------------------------Funcion que englobadora que comprueba correo y guarda nombre-------------------->
+    <script>
+        function procesardatos()
+        {
+            if (guardarNombre() && verificarCorreo())
+            {window.location.href = "index.html";}
+        }
+    </script>
+<!-----------------Funcion que engloba que comprueba correo(EXPR_REG) y guarda nombre----------------------->
+<script>
+    function procesardatos2()
+     {
+        if (guardarNombre() && verificarCorreoExprReg())
+        {window.location.href = "index.html";}
+    }
+</script>
+<!-----------------------------------------Funcion que verifica correo--------------------------------------->
+
+<script> 
+    function verificarCorreo()
+    {
+        var emailInput = document.getElementById("emailInput");
+        var email = emailInput.value;
+        if (validarDireccionCorreo(email)) {
+            return true;
+    } else {
+        alert("Por favor, ingrese una dirección de correo electrónico válida.");
+        return false;
+    }
+}
+
+//-------------------------------Funcion que valida el correo sin expresiones regulares----------------------
+
+function validarDireccionCorreo(email) {
+    if (email.includes("@")) {
+        var partes = email.split("@");
+        if (partes.length === 2) {
+            var dominio = partes[1];
+            if (dominio.includes(".")) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+    </script>
+
+<!----------------------------------Funcion que guarda el nombre----------------------------------------------->
+   
+   <script>
+        function guardarNombre() {
+            const nombreIngresado = document.getElementById("nombre").value;
+
+            if(nombreIngresado === "")
+            {
+                alert("Por favor, introduzca un nombre de usuario.");
+                return false;
+            }
+            else{
+                localStorage.setItem("fname", nombreIngresado);
+                return true;
+            }
+        }
+    </script>
+
+<!-------------------Verifica correo por el metodo de expresiones regulares----------------------------------->
+ 
+ <script>
+    function verificarCorreoExprReg() {
+        var correoInput = document.getElementById("emailInput2");
+        var correo = correoInput.value;
+        var expresionRegular = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (expresionRegular.test(correo)) {
+            return true;
+        } else {
+            alert("Por favor, ingrese una dirección de correo electrónico válida (Expr_Reg).")
+            return false;
+        }
+    }
+</script>
+    </div>
+
+<!------------------------------------Pie de pagina----------------------------------------------------------->
+    
+<div id = "pie" style="clear:both;text-align:center;width: 1250px;"> 
+    <h1 style="margin-bottom: 20px; background-color:#1e53f0; width: 1250px;text-align:center;height: 40px;"> Universidad de Alcalá </h1>
+     </div>
+     </html>

@@ -1,0 +1,123 @@
+<html manifest="cache.manifest" lang="es">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ------------------------------1ª LAYOUT DEL TITULO----------------------------------------------------->
+<div id="contenedor" style="width:1250px">
+    <div id="cabecera" style="background-color:grey;"> 
+        <h1 style="margin-bottom: -21px; background-color: rgb(50, 121, 228); width: 1250px;text-align:center;"> Smart Room Project </h1>
+    </div>
+<!------------------------------------2º layout del menu---------------------------------------------------->
+    <div id="cabecera" style="background-color:rgb(130, 202, 214);height: 30px;"> 
+        <style>
+        </style>
+        <h1 style="margin-bottom: 20px; background-color: rgb(141, 141, 141); width: 1250px;text-align: right;"></h1>
+        <b style="color: #000000;"><strong>Menú: </strong></b>
+        <a href="config.html">
+            <button class="button">Introducir Datos de la habitaciones y sensores</button>
+        </a>
+        <a href="minombre.html">
+            <button class="button">Introducir Nombre de usuario</button>
+        </a>
+        <a>
+            <a href="galeria.html">
+                <button class="button"> Acceder a la galería </button>
+            </a>
+        </a>
+        <a href="tablas.html">
+            <button class="button">Estaciones</button>
+        </a>
+        <div id="mensaje-bienvenida"></div>
+    </div>
+<!---------------------------script del mensaje de bienvenida------------------------------------------------>
+    <script>
+          const nombreAlmacenado = localStorage.getItem("fname");
+          if (nombreAlmacenado) {
+              const mensajeBienvenida = document.getElementById("mensaje-bienvenida");
+              mensajeBienvenida.textContent = "Hola " + nombreAlmacenado + ": Bienvenido a smartroom";
+          }
+      </script>
+<!------------------------3ªLAYOUT DEL CONTENEDOR IZQUIERDO (FORMULARIO)----------------------------------->
+    <div id="contenedor-con-imagen" style="height:490px;width:585px;float:left;">
+    <h1 style=" float:center; text-align: center;">Datos de la habitación:</h1>
+    <ul>
+      <li>País: <span id="pais" style="color: #000000;"></span></li><br>
+      <li>Ciudad: <span id="ciudad"></span></li><br>
+      <li>Coordenadas GPS: <span id="coordenadasGoogleMaps"></span></li><br>
+      <li>Mapa URL: <span id="url"></span></li><br>
+      <li> Foto: <span id="foto"></span></li>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7x1o0zF1jaDqJZ7mqGLdmhWlZyoVBhC8eWw&usqp=CAU" alt="Descripción de la imagen"class="centrar"><br>
+      <li> Contraseña: <span id="contraseña"></span></li><br>
+    </ul>
+    </div>
+    
+    <!----------------------------script para pasar los datos de config.html---------------------------------->
+    <script>
+     const urlParams = new URLSearchParams(window.location.search);
+      document.getElementById("pais").textContent = urlParams.get("pais");
+      document.getElementById("ciudad").textContent = urlParams.get("ciudad");
+      document.getElementById("coordenadasGoogleMaps").textContent = urlParams.get("gps");
+     // document.getElementById("url").innerHTML = `<a href="${urlParams.get("enlaceGoogleMaps")}" target="_blank">${urlParams.get("enlaceGoogleMaps")}</a>`;
+     const enlaceGoogleMaps = urlParams.get("enlaceGoogleMaps");
+const enlaceGoogleMapsElement = document.getElementById("url");
+
+if (enlaceGoogleMaps) {
+    enlaceGoogleMapsElement.innerHTML = `<a href="${enlaceGoogleMaps}" target="_blank">Ver en mapa</a>`;
+} else {
+    enlaceGoogleMapsElement.textContent = "";
+}
+  </script>
+
+
+<!----------------------- 4º LAYOUT DEL CONTENEDOR DERECHO (SENSORES)--------------------------------------------->
+    <div id="contenedor-con-imagen-der" style=" text-align:center; height: 490px; width: 585px;float:right;"> <!--4º LAYOUT DEL CONTENEDOR DERECHO (SENSORES)-->
+        
+            <h1>Datos de los sensores:</h1><br>
+
+            </head>
+            <body>
+            
+            <table class="table-centrada" border="1">
+              <tr>
+                <th>Sensor</th>
+                <th>Activo</th>
+            </tr>
+            <tr>
+                <td>Temperatura</td>
+                <td id="temperaturaActivo"></td>
+            </tr>
+            <tr>
+                <td>Humedad</td>
+                <td id="humedadActivo"></td>
+            </tr>
+            <tr>
+                <td>Nivel de sonido</td>
+                <td id="sonidoActivo"></td>
+            </tr>
+            <tr>
+                <td>Nivel de luz</td>
+                <td id="luzActivo"></td>
+            </tr>
+            <tr>
+                <td>Movimiento</td>
+                <td id="movimientoActivo"></td>
+            </tr>
+            </table>
+<!-----------------------Script para visualizar si se ha pulsado el checkbox--------------------------------------->
+<script>
+        document.getElementById("temperaturaActivo").textContent = localStorage.getItem("temperaturaActivo") === "true" ? "Sí" : "No";
+        document.getElementById("humedadActivo").textContent = localStorage.getItem("humedadActivo") === "true" ? "Sí" : "No";
+        document.getElementById("sonidoActivo").textContent = localStorage.getItem("sonidoActivo") === "true" ? "Sí" : "No";
+        document.getElementById("luzActivo").textContent = localStorage.getItem("luzActivo") === "true" ? "Sí" : "No";
+        document.getElementById("movimientoActivo").textContent = localStorage.getItem("movimientoActivo") === "true" ? "Sí" : "No";
+
+</script>
+    </div>
+  <!-----------------------------5º layout del pie de página--------------------------------------------->
+    <div id = "pie" style="background-color: rgb(83, 197, 127);clear:both;text-align:center;width: 1250px; height: 30px;"> <!--4ª LAYOUT DEL PIE-->
+    <h1 style="margin-bottom: 20px; background-color: rgb(98, 143, 143); width: 1250px;text-align:center;"> Universidad de Alcalá </h1>
+    </div>
+
+</div>
+</html>

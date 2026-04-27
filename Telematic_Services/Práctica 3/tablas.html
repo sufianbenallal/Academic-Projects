@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <div id="contenido" style="background-color:#0ae4b5;">
+        <h1 style="margin-bottom: 0px; text-align:center; background-color: rgb(12, 131, 101); width: 1255px;">Estaciones Meteorológicas</h1>
+        </div>
+    
+   
+    <script>
+        $(document).ready(function () {
+            $(".pagina-btn").on("click", function () {
+                var pagina = $(this).data("pagina");
+                $(".tabla-container").hide();
+                $("#tabla-container-" + pagina).show();
+            });
+
+            $(".tabla-container").each(function () {
+                var containerId = $(this).attr("id");
+                var pagina = containerId.split("-")[2];
+
+                // Crear botón para cada tabla
+                var boton = $("<button>Página " + pagina + "</button>");
+                boton.addClass("boton-pagina");
+
+                boton.on("click", function () {
+                    $(".tabla-container").hide();
+                    $("#" + containerId).show();
+                });
+
+                // Agregar botón a la parte inferior de cada tabla
+                //$(this).append(boton);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="boton-container" style="background-color: rgb(26, 141, 26);width: 1250px;">
+        <button class="pagina-btn" data-pagina="1">Página 1</button> |
+        <button class="pagina-btn" data-pagina="2">Página 2</button> |
+        <button class="pagina-btn" data-pagina="3">Página 3</button> |
+        <button class="pagina-btn" data-pagina="4">Página 4</button>
+    </div>
+
+
+<div id="tabla-container-1" class="tabla-container" style="background-color: blue; width: 1250px; height: 520px; display: flex; justify-content: center; align-items: center;">
+    <table id="tabla-1" style="width: 80%; /* ajusta el ancho de la tabla según sea necesario */">
+        <tr>
+            <th>Ciudad</th>
+            <th>Temperatura</th>
+            <th>Humedad</th>
+            <th>Ruido</th>
+            <th>Nivel de luz</th>
+            <th>Color de iluminación</th>
+        </tr>
+        <tr>
+            <td>Alcalá de H.</td>
+            <td>25</td>
+            <td>48</td>
+            <td>150</td>
+            <td>120</td>
+            <td>000000</td>
+        </tr>
+        <tr>
+            <td>Alicante</td>
+            <td>30</td>
+            <td>69</td>
+            <td>180</td>
+            <td>211</td>
+            <td>FF0000</td>
+        </tr>
+        <tr>
+            <td>Badajoz</td>
+            <td>35</td>
+            <td>30</td>
+            <td>50</td>
+            <td>150</td>
+            <td>00FF00</td>
+        </tr>
+        <tr>
+            <td>Burgos</td>
+            <td>18</td>
+            <td>42</td>
+            <td>211</td>
+            <td>180</td>
+            <td>0000FF</td>
+        </tr>
+        <tr>
+            <td>Córdoba</td>
+            <td>35</td>
+            <td>41</td>
+            <td>150</td>
+            <td>50</td>
+            <td>FFFFF</td>
+        </tr>
+
+        <!-- Datos de la tabla 1 -->
+    </table>
+</div>
+<div id="tabla-container-2" class="tabla-container" style="background-color: rgb(30, 255, 0); width: 1250px; height: 520px; display: flex; justify-content: center; align-items: center;">
+    <table id="tabla-2" style="width: 80%; /* ajusta el ancho de la tabla según sea necesario */">
+            <th>Ciudad</th>
+            <th>Temperatura</th>
+            <th>Humedad</th>
+            <th>Ruido</th>
+            <th>Nivel de luz</th>
+            <th>Color de iluminación</th>
+        </tr>
+        <tr>
+            <td>Alcobendas</td>
+            <td>25</td>
+            <td>48</td>
+            <td>150</td>
+            <td>120</td>
+            <td>000000</td>
+        </tr>
+        <tr>
+            <td>Alcorcón</td>
+            <td>35</td>
+            <td>41</td>
+            <td>150</td>
+            <td>50</td>
+            <td>FFFFF</td>
+        </tr>
+        <tr>
+            <td>Leganés</td>
+            <td>18</td>
+            <td>42</td>
+            <td>211</td>
+            <td>180</td>
+            <td>0000FF</td>
+        </tr>
+        <tr>
+            <td>Cáceres</td>
+            <td>35</td>
+            <td>30</td>
+            <td>50</td>
+            <td>150</td>
+            <td>00FF00</td>
+        </tr>
+        <tr>
+            <td>Benidorm</td>
+            <td>30</td>
+            <td>69</td>
+            <td>180</td>
+            <td>211</td>
+            <td>FF0000</td>
+        </tr>
+        <!-- Datos de la tabla 2 -->
+    </table>
+</div>
+<div id="tabla-container-3" class="tabla-container" style="background-color: rgb(83, 0, 39); width: 1250px; height: 520px; display: flex; justify-content: center; align-items: center;">
+    <table id="tabla-3" style="width: 80%; /* ajusta el ancho de la tabla según sea necesario */">
+        <tr>
+            <th>Ciudad</th>
+            <th>Temperatura (º)</th>
+            <th>Humedad (%)</th>
+            <th>Ruido</th>
+            <th>Nivel de luz</th>
+            <th>Color de iluminación</th>
+        </tr>
+        <tr>
+            <td>Alhurín de la torre</td>
+            <td>25</td>
+            <td>48</td>
+            <td>150</td>
+            <td>120</td>
+            <td>000000</td>
+        </tr>
+        <tr>
+            <td>Bilbao</td>
+            <td>30</td>
+            <td>69</td>
+            <td>180</td>
+            <td>211</td>
+            <td>FF0000</td>
+        </tr>
+        <tr>
+            <td>Oviedo</td>
+            <td>25</td>
+            <td>48</td>
+            <td>150</td>
+            <td>120</td>
+            <td>000000</td>
+        </tr>
+        <tr>
+            <td>Mérida</td>
+            <td>35</td>
+            <td>30</td>
+            <td>50</td>
+            <td>150</td>
+            <td>00FF00</td>
+        </tr>
+        <tr>
+            <td>Toledo</td>
+            <td>35</td>
+            <td>41</td>
+            <td>150</td>
+            <td>50</td>
+            <td>FFFFF</td>
+        </tr>
+        <!-- Datos de la tabla 2 -->
+    </table>
+</div>
+<div id="tabla-container-4" class="tabla-container" style="background-color: rgb(217, 255, 0); width: 1250px; height: 520px; display: flex; justify-content: center; align-items: center;">
+    <table id="tabla-4" style="width: 80%; /* ajusta el ancho de la tabla según sea necesario */">
+        <tr>
+            <th>Ciudad</th>
+            <th>Temperatura</th>
+            <th>Humedad</th>
+            <th>Ruido</th>
+            <th>Nivel de luz</th>
+            <th>Color de iluminación</th>
+        </tr>
+        <tr>
+            <td>Los Barrios</td>
+            <td>15</td>
+            <td>58</td>
+            <td>150</td>
+            <td>120</td>
+            <td>FFF000</td>
+        </tr>
+        <tr>
+            <td>Isla Cristina</td>
+            <td>35</td>
+            <td>30</td>
+            <td>50</td>
+            <td>150</td>
+            <td>00FF00</td>
+        </tr>
+        <tr>
+            <td>Madridejos</td>
+            <td>25</td>
+            <td>48</td>
+            <td>150</td>
+            <td>120</td>
+            <td>000000</td>
+        </tr>
+        <tr>
+            <td>Ocaña</td>
+            <td>25</td>
+            <td>48</td>
+            <td>150</td>
+            <td>120</td>
+            <td>000000</td>
+        </tr>
+        <tr>
+            <td>Jaén</td>
+            <td>5</td>
+            <td>68</td>
+            <td>150</td>
+            <td>120</td>
+            <td>000FFF</td>
+        </tr>
+        <!-- Datos de la tabla 2 -->
+    </table>
+</div>
+</body>
+<div id="pie" style="background-color:rgb(0, 151, 63);clear:both;text-align:center;height: 40px; width: 1270px;">
+    <a href="index.html">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Universidad_de_Alcal%C3%A1_%282021%29_logotipo_azul.svg/1824px-Universidad_de_Alcal%C3%A1_%282021%29_logotipo_azul.svg.png" alt="Descripción de la imagen"width="40"height="40">
+ </a>
+ 
+ </div>
+</html>

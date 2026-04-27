@@ -1,0 +1,244 @@
+<html manifest="cache.manifest" lang="es">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="contenedor" style="width:1250px">
+<!----------------------------------- layout de la cabera------------------------------------------------->
+    <div id="contenido" style="background-color:#0ae4b5;">
+    <h1 style="margin-bottom: 0px; text-align:center; background-color: rgb(12, 131, 101); width: 1250px;">Configuración de la habitación</h1>
+    </div>
+    <!--------------------------------- formulario--------------------------------------------------------->
+    <div id="contenedor-con-imagen-config-izq"style="height:510px;width:600px;float:left;text-align:center;">
+    <form>
+        <h1 style="color:azure;"> Rellene los datos </h1>
+        País: <input list ="country"placeholder="Ejemplo:España" id="country"><br><br>
+        <datalist id="country"> 
+            <option value="España"> 
+            <option value="Portugal">
+            <option value="Francia">
+            <option value="Alemania"> 
+            <option value="Islandia">
+        </datalist>
+Ciudad: 
+        <select name="city" id="city" placeholder="Madrid"></select><br><br><br>
+        
+        Ciudad: <input name="city"placeholder="Madrid" type="text"><br><br><br>
+        Coordenadas GPS: <input name="GPS" id="gps" type = "text"><br><br><br>
+        Dirección URL: <input name = "URL"placeholder="Ejemplo:https://www.uah.es/" type="text"> <br><br>
+        <br>Foto:<form action="procesar_carga.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="Examinar" accept="image/*">
+            <input type="submit" value="Subir Foto">
+            <br><br><br><label for="password">Contraseña (Mínimo 6 caracteres):</label>
+            <input type="password" id="password" oninput="verificarContraseña()" placeholder="Ingrese password"name="password" required>
+            <div id="resultado" class="resultado" style="color: azure;"></div>
+            <br><br><button class="button1" onclick="procesarFormulario(event)">Enviar datos</button>
+            </form>
+        </form>
+    </div>
+    <!----------------------------------funcion ajax para ciudades--------------------------------->
+    <script>
+        function cargarCiudades() {
+           const countryInput = document.getElementById("country");
+           const selectedCountry = countryInput.value;
+     
+           // Realizar una solicitud al servidor para obtener las ciudades correspondientes al país
+           fetch(`obtener_ciudades.php?pais=${selectedCountry}`)
+              .then(response => response.json())
+              .then(ciudades => {
+                 const citySelect = document.getElementById("city");
+     
+                 // Limpiar las opciones actuales
+                 citySelect.innerHTML = "";
+     
+                 // Agregar las nuevas opciones al campo de ciudades
+                 ciudades.forEach(ciudad => {
+                    const option = document.createElement("option");
+                    option.value = ciudad;
+                    option.text = ciudad;
+                    citySelect.add(option);
+                 });
+              })
+              .catch(error => console.error('Error:', error));
+        }
+     
+        // Llamar a la función cargarCiudades cuando cambie la selección del país
+        document.getElementById("country").addEventListener("change", cargarCiudades);
+     </script>
+<!------------------------Script para generar un enlace en google maps-------------------------------------->
+    <script>
+        function generarEnlace() {
+      //const coordenadas= document.getElementById("gps").value;
+         // const enlace = `https://maps.google.com/maps?q=${coordenadas}`;
+          //document.getElementById("enlaceGoogleMaps").innerHTML = `<a href="${enlace}" target="_blank">${enlace}</a>`;
+          /////////////////////////////////
+          //const coordenadas = document.getElementById("gps").value;
+          //  const enlace = `https://maps.google.com/maps?q=${coordenadas}`;
+           // localStorage.setItem("enlaceGoogleMaps", enlace);
+           const coordenadas = document.getElementById("gps").value;
+    const enlace = `https://maps.google.com/maps?q=${coordenadas}`;
+    enviarDatos(enlace);  // Envía el enlace directamente al siguiente paso
+        }
+    </script>
+
+<!------------------------------Script que engloba diferentes funciones-------------------------------------->
+
+<script>
+function procesarFormulario(event) {
+    event.preventDefault();
+    if (verificarContraseña() && validarPais() && verificarTemperatura()) {
+        generarEnlace();
+        guardarConfiguracion();
+        //enviarDatos();
+        //window.location.href = "index.html"
+    } 
+}
+</script>
+<!--------------------------- Script que verifica la contraseña ---------------------------------------------->
+  <script>
+        function verificarContraseña() {
+            const contraseñaInput = document.getElementById("password").value;
+            const resultadoElement = document.getElementById("resultado");
+            if (contraseñaInput.length >= 6) {
+                //window.location.href = "config.html"
+                resultadoElement.textContent = "¡Contraseña Segura!";
+                resultadoElement.classList.remove("debil");
+            resultadoElement.classList.add("seguro");
+                return true;
+            } else if(contraseñaInput.length > 0 ) {
+                resultadoElement.textContent = "Contraseña Débil.";
+                resultadoElement.classList.remove("seguro");
+            resultadoElement.classList.add("debil");
+                return false;
+            }
+            else {
+                resultadoElement.textContent = "Por favor, introduzca una contraseña.";
+                resultadoElement.className = "";
+                return false;
+            }
+        }
+    </script>
+    <!------------------------ Script que Muestra alerta cuando el pais no es correcto------------------------->
+    <script>
+        function validarPais() {
+            const countryInput = document.getElementById("country");
+            const selectedCountry = countryInput.value;
+
+            const paisesEuropeosPermitidos = ["España", "Francia", "Alemania","Portugal","Islandia"];
+            if (paisesEuropeosPermitidos.includes(selectedCountry)) {
+                return true;
+            } else {
+                alert("Por favor, seleccione un país europeo válido.");
+                return false;
+                     }
+    }
+</script>
+
+<!------------------------Script que envía los datos a la página principal----------------------------------->
+<script>
+    function enviarDatos(enlaceGoogleMaps) {
+        const pais = document.querySelector('[list="country"]').value;
+        const ciudad = document.querySelector('input[name="city"]').value;
+        const gps = document.querySelector('input[name="GPS"]').value;
+        const url = document.querySelector('input[name="URL"]').value;
+
+        const params = new URLSearchParams();
+        params.set("pais", pais);
+        params.set("ciudad", ciudad);
+        params.set("gps", gps);
+        params.set("url", url);
+        params.set("enlaceGoogleMaps", enlaceGoogleMaps);  // Agrega el enlace de Google Maps
+
+        window.location.href = "index.html?" + params.toString();
+    }
+</script>
+<!---------------------------------------------Checkbox------------------------------------------------------->
+<div id="contenedor-con-imagen-config-der" style=" height: 510px; width: 570px;text-align:center; float:right;">
+        <h1 style="text-align:center;color:azure"><strong>Seleccione los sensores</strong></h1><br>
+        <div id="checkbox-container" style="display: inline-block; text-align: left;"></div>
+        <input name="remember1" value="yes" type="checkbox" id="temperaturaCheckbox">Temperatura<br><br>
+        <input name="remember2" value="yes" type="checkbox" id="humedadCheckbox">Humedad<br><br>
+        <input name="remember3" value="yes" type="checkbox" id="sonidoCheckbox">Nivel de sonido<br><br>
+        <input name="remember4" value="yes" type="checkbox" id="luzCheckbox">Nivel de luz<br><br>
+        <input name="remember5" value="yes" type="checkbox" id="movimientoCheckbox">Movimiento<br><br>
+        <div id="button" style = "text-align:center;">
+        <!--<button class="button1" onclick="guardarConfiguracion()">Enviar datos</button>-->
+        <p id="resultado"></p>
+        </div>
+
+<!------------------------------Script para el envio de los checkbox------------------------------------------>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Desmarcar todos los checkboxes al cargar la página
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+        checkbox.checked = false;
+    });
+});
+
+function guardarConfiguracion() {
+    const temperaturaCheckbox = document.querySelector('#temperaturaCheckbox').checked;
+    const humedadCheckbox = document.querySelector('#humedadCheckbox').checked;
+    const sonidoCheckbox = document.querySelector('#sonidoCheckbox').checked;
+    const luzCheckbox = document.querySelector('#luzCheckbox').checked;
+    const movimientoCheckbox = document.querySelector('#movimientoCheckbox').checked;
+
+    localStorage.setItem("temperaturaActivo", temperaturaCheckbox);
+    localStorage.setItem("humedadActivo", humedadCheckbox);
+    localStorage.setItem("sonidoActivo", sonidoCheckbox);
+    localStorage.setItem("luzActivo", luzCheckbox);
+    localStorage.setItem("movimientoActivo", movimientoCheckbox);
+}
+</script>
+
+<!--------------------Zona de las temperaturas-------------------------------------------------------->
+        
+       <h1 style="text-align:center; color: azure;">Configure alertas</h1>
+        <form oninput="x.value=parseInt(Tmax.value)-parseInt(Tmin.value)">
+        Temperatura Máxima(ºC): <input name="Tmax"Placeholder="Máx: 26ºC" id="Tmax" max="45"type="number"> <br><br>
+        Temperatura Mínima(ºC): <input name="Tmin"Placeholder="Mín: 22ºC" min="-20" id="Tmin" min="-20"  type="number"> <br><br>
+        Diferencia de temperatura(ºC): <output name="x" for="Tmax Tmin"></output>
+       <div id="button" style = "text-align:center;">
+        <!--<button class="button1"onclick="verificarTemperatura()">Comprobar</button>-->
+        </div>
+    </form>
+
+<!------------------------------- Funcion para las temperaturas-------------------------------------------->
+   <script>
+   function verificarTemperatura() {
+    var TmaxInput = document.getElementById("Tmax");
+    var TminInput = document.getElementById("Tmin");
+
+    var Tmax = parseFloat(TmaxInput.value);
+    var Tmin = parseFloat(TminInput.value);
+
+    var minTemp = 22;
+    var maxTemp = 26;
+
+    if (Tmax >= minTemp && Tmax <= maxTemp && Tmin >= minTemp && Tmin <= maxTemp) {
+        TmaxInput.style.color = "black";
+        TminInput.style.color = "black"; 
+        return true;
+    } else {
+        alert("Las temperaturas deben estar entre 22ºC y 26ºC.");
+        
+        if (Tmax < minTemp || Tmax > maxTemp) {
+            TmaxInput.style.color = "red";
+        } 
+        
+        if (Tmin < minTemp || Tmin > maxTemp) {
+            TminInput.style.color = "red";
+        } 
+        return false;
+    }
+    }
+</script>
+    </div>
+    <!-------------------------------- pie de pagina------------------------------------------------------>
+    <div id="pie" style="background-color:rgb(0, 151, 63);clear:both;text-align:center;height: 40px;">
+       <a href="index.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Universidad_de_Alcal%C3%A1_%282021%29_logotipo_azul.svg/1824px-Universidad_de_Alcal%C3%A1_%282021%29_logotipo_azul.svg.png" alt="Descripción de la imagen"width="40"height="40">
+    </a>
+    
+    </div>
+</div>    
+</html>

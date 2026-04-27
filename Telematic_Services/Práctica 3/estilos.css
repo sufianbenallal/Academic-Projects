@@ -1,0 +1,288 @@
+
+body {
+  font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+}
+    h1 {
+    color: #333232;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+  
+  #contenedor-con-imagen {
+    background-image: url('https://fantasticdotartdotblog.files.wordpress.com/2019/02/wallpaper-3.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 20px; 
+  }
+  #contenedor-con-imagen-der {
+    background-image: url('https://i.ytimg.com/vi/HkYqofJii_E/maxresdefault.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    padding: 20px; 
+  }
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #007BFF; 
+  color: #007BFF; /* Color del texto del botón */
+  background-color: #fff; /* Color de fondo del botón */
+  border-radius: 5px; /* Esquinas redondeadas */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave al pasar el ratón sobre el botón */
+}
+
+/* Cambios en el estilo al pasar el ratón sobre el botón */
+.button:hover {
+  background-color: #007BFF; /* Nuevo color de fondo al pasar el ratón */
+  color: #fff; /* Nuevo color de texto al pasar el ratón */
+}
+.boton-derecha {
+  float: right;
+}
+
+
+.centrar {
+    display: block;
+    margin: 0 auto;
+}
+
+table, td, th {
+  border: 3px solid rgb(0, 0, 0); 
+  text-align: center;
+  float: center;
+  margin: 0 auto;
+}
+
+#table1 {
+  border-collapse: collapse;
+  border-color: rgb(0, 0, 0);
+  width: 80%;
+  float: center;
+  padding: 10px;
+}
+.table-centrada {
+    width: 80%;
+    padding: 10px;
+    height: 70%;
+}
+
+#mensaje-bienvenida {
+  float: right; 
+  margin-right:20px;
+}
+/* -----------------------------------mi nombre.html ------------------------------ */
+.contenido {
+  position: relative;
+  font-weight: bold; /* Aplica negrita al texto de la marca de agua */
+  text-align: center; /* Alinea el texto en el centro */
+  color: #000000; /* Cambia el color del texto si es necesario */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+.marca-de-agua {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.2; 
+  pointer-events: none;
+}
+/*--------------------------------config.html------------------------------------------------------------*/
+
+#contenedor-con-imagen-config-izq {
+  background-image: url('https://www.roc21.com/blog/wp-content/uploads/2012/09/fondos-para-pa%CC%81ginas-web-6.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px; 
+  color: #ffffff;
+}
+
+
+#contenedor-con-imagen-config-der {
+  background-image: url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px; 
+  color: #ffffff;
+}
+
+
+
+.button1 {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #05832a; 
+  color: #007728; /* Color del texto del botón */
+  background-color: #ffffff; /* Color de fondo del botón */
+  border-radius: 5px; /* Esquinas redondeadas */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave al pasar el ratón sobre el botón */
+}
+
+/* Cambios en el estilo al pasar el ratón sobre el botón */
+.button1:hover {
+  background-color: #d1d0d3; /* Nuevo color de fondo al pasar el ratón */
+  color: #fff; /* Nuevo color de texto al pasar el ratón */
+}
+.boton-derecha {
+  float: right;
+}
+
+
+#resultado {
+  color: black;
+}
+
+.seguro {
+  color: green;
+}
+
+.debil {
+  color: red;
+}
+
+
+
+.alerta {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: center;
+  color: #721c24;
+}
+
+.botonMostrar {
+  padding: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+}
+/* ------------------------------------galería.html---------------------------------------------------------*/
+
+       /* Estilos específicos para la galería estática */
+       /* Estilos específicos para la galería */
+/* Estilos específicos para la galería estática */
+/* Estilos específicos para la galería */
+.galeria-estatica {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url('https://previews.123rf.com/images/miraelart/miraelart1608/miraelart160800001/60752348-sin-patr%C3%B3n-con-hojas-de-color-amarillo-de-olmo-pintado-a-mano-ejemplo-de-la-acuarela-dise%C3%B1o-para.jpg'); /* Reemplaza 'url_de_tu_imagen.jpg' con la URL de tu imagen de fondo */
+  background-size: cover; /* Ajusta según sea necesario para cubrir el contenedor */
+  background-position: center;
+}
+
+.imagen {
+  position: relative;
+  margin: 10px;
+  cursor: pointer; /* Agrega un cursor indicando que la imagen es interactiva */
+}
+
+.imagen img {
+  width: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
+  height: auto;
+}
+
+#info-imagen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  z-index: 1000;
+}
+body {
+  margin:10;/* Elimina el margen predeterminado del cuerpo */
+  overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+}
+
+/* Estilos específicos para la galería con desplazamiento */
+.galeria-desplazamiento {
+  max-width: 1280px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;/* Centrar la galería en la página y agregar espacio entre las dos galerías */
+  background-image: url('https://static.vecteezy.com/system/resources/previews/007/238/630/non_2x/circles-geometry-gradient-background-with-yellow-and-orange-color-combination-presentation-background-design-suitable-for-presentation-poster-wallpaper-personal-website-ui-and-ux-experiences-free-photo.jpg'); /* Reemplaza 'url_de_tu_imagen.jpg' con la URL de tu imagen de fondo */
+  background-size: cover; /* Ajusta según sea necesario para cubrir el contenedor */
+  background-position: center;
+}
+
+.carrusel {
+  display: flex;
+  transition: transform 0.5s;
+  padding: 10px
+}
+
+.imagen1 {
+  margin-right: 15px; /* Ajustar el margen entre imágenes según sea necesario */
+  flex: 0 0 auto;
+}
+
+#anterior,
+#siguiente {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(219, 37, 13);
+  padding: 100px;
+}
+
+#anterior {
+  left: 0;
+}
+
+#siguiente {
+  right: 0;
+}
+/*-------------------------------------tablas.html----------------------------------------------------------*/
+.tabla-container {
+   display: none;
+   text-align: center;
+   background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBERFRgSEhERERgRFRwREhAYERgZEhERGBweGRgUGBgcJC4lHB8rHxgYJjgmKy8xNzU1GiQ7QDszPzA0NTEBDAwMEA8QHhISHDQsJSs0MTQ2NDQ0NDQ0NDYxNDQ0NDQ0NDQ0NDQ0NDQxNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIALEBHAMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAACAwQBAAUG/8QANhAAAgEDAgQEBQQBAwUBAAAAAQIAAxExIUEEElGBImFx8AUyQpGhE7HB0VIUI3IGksLh8TP/xAAaAQEBAQEBAQEAAAAAAAAAAAACAQMABAYF/8QAIREBAQADAQEAAwADAQAAAAAAAAECETFBIQMSUTJh8SL/2gAMAwEAAhEDEQA/AKTCSYZqT5J4gtF79oxoG8ccYmRKExJ0yJQmIKsKb6ve8bS27RTfV73jaW3aW8SdUJvC6wU3hdYDJGB73m0MzBge95tHMo+qqWTGPiLpZMY+IT8NSWJv6SNJYm/pI0wdT9/iGYFP3+IZlheECUrmTCUpmVIaZpxBPv8AM04jxMp4ur8kY0Fx4JtBeNxI17TwuD4hnepTaxZG0NrDkOCxwNvvPf4tNe08ZKahWIXlYG/LYWN/O+f2ixrzZ9V0xdWAbUMFBtceZB3lhvgH8SHhHBW/p956DQ5VcePMfhatOuK4ZawsbI7MvJcW8Fri4uZtaqzG6onzcrte5Qam1wubDGBcXl/FOoW7EKALljgDqZ5/C1Urq7UvEqWBflIV2N9BfNv6i3bEymvkMQaA4BOL3K+V9/sJPxnw5KpDVLkAaKHceLY6G1u3eVU7hBz+G2LkActsknt/cl4rj6aLfnDXbCjmtodxJLlMtxllr15nE0VV7WdgqkKGBemg8y1zbewv6SwogHLzABlIXW1/Teef8RTi38SmmiOLoebxEHrodc6SnhqDlUDpRYoCDUJdnY7m5aw7CaZT5N1lerBTcL/slA1gAXuV5df7MdUR2C2VTZACS5uW1JPhUDfpH8/McWsoHrbczOU6ekEys40k1xIZqTDNSeZqFt4sZ99IxosZ99Io41MiUJjvJ0yJQmO8NWFN9XveNpbdopsN73jKW3ad46dUpvC6wU3hdYSJGB73m0czBgTqGZR9V0smMfEXSyYx8Qn4aksTf0kaSxN/SRpi6n7/ABDMCn7/ABDMpECUpmTCUpmVMTT7/MxsTTBbEcMtjOb5YLGE3yTSC8riATZj/ibqNbNcixOMAHTrPB4ziVS/NfU6AKSTPc4k2NsC2Np4vFo7X5Cq66kjXtFNPP8AkFw1QnlcYY+NCrcygaBibAA+QJ0+x9ZR+0hR12HLc7sSBv8ANLLchAwLeHy0I5f69PSS6TAtilZnoqA5RCzg3ChdBYt18Q0nn8Fw5oBqaMwUnmKNY8pxdWz9+k9B6T03/VpGxcWdD8tRdL+h0BuOkRVcuPCLXBu31A7C2Dr+87fzS5PP+J8HSdQ9ao6KlgNQVJsdAOt5T8MrmtS5Uq1BSoaL4UUcxBsAoXmOl9YziGplAaioASTyEcwybWzfS0np0aKhGp00AqnQgqNBoSUvcjtHMtTX/GF+ZbHxKeEa89hcHXc+cXRYXK3Gg5jrgYJPQefnGvgj3mT0OGRDcKoDaMAPmB69dbQ7lgXq6kLH1AMauBrtBC69p1sekMumk+IzNSYZqTJoFt4sZ99Ixt4vf30ijjUyJQmO8nTIlCY7w1YW2G97xlHbtFNhve8bR27S+J6oTeF1gpvC6wGSMCbQzMGBNo5lH1VS+YxjYi6XzGMaE5w1JYm/pI0lib+kjSOp+/xDgU/f4hywiBKUzJhKUzKmJre/zAfEJoDnSOFSoZHgi1jfpjldHifEaqIbuwXTc6/aeRXqVPDyUnIqHwu4KIy3tzAnOpns8fRppyqwB5x+mDbxG5BsW9d9J5PFOtDwNUexJCqXZ0GvTW2oG00x1evNn02lTOHAuragagEHwkH846S16fNbUjUEjY2N7aG9vQgyWjzG5NtCLEOrXvr9JNpXfWGux4ziWCISdOUEnW9iNhf3ieJU4mtVouKdhUUDXrrrbobAz1+OTnUpe3OuejC3vtI6FBqSBlXncXPLccp5hY3v0B+86X6OW9pfgXF0V4f9GsSlXnZ3ZwQXvYA8x6WtaULSCr84dSbX0Nl7RdR6hUhmpqA3gXkblKAjx362Jsum8Tw1JAWc8vErohV7qiswPyhbi9+uN9Zpn/6u96ZZXkWMdDvffrBprfQ9INRQEsiogGLaqCT+ZtJGBUlr2Ug2FgxJ+a23pM9fB9WoLi/Y+ozFs0OgxsbjluT4c6AfNcHfpbaAwh41SmakwzUmZBbeL37fxGNF79oo41MiUJjvJ0yJQmO8NWFNhve8bR27RbfV73jKP9TrxPVCbwusFN4XWEyhge951HM4YHvedQzKPqql8xjGi6WTGNCc4aksTf0kaSxMH0kaR1P3+IcCn7/EOUiJSmZNKEzEmJjQHxCeCx099YoZKD19NpFxPxBqblPmW6+q3Avb7y5B/Mk4z4eXdX0IYrza6i1v4Et4zy/bXx3Fkl1UiyFW5nsTYgaKAOp3nik3vyqxVrnnsLaHBsTY+s97ixr2ni1Bn1/maS/AzjKR0+0paT0hp3EoeRnOO4o+AkbC/wBtv3g1QbeG2NL4vtfyh1hdbdRPF+M8PUNMNTBfl5jy8z3KkFQLXsbZG/rFjN2TbqOsymmqV2Ku/MG5SLEHHIBcnvrrO4GkaVP9K4dOfnW62ZWI36jQSng+MSnw9GnTQ3KLcgDm5mF3Zzk+ImL4zhywQoxTlbmcfTUtrrY3HaLK/dbZZT3bGGdc7RijHpFrRAZn0Bc3IHNyjXA5iTv1mcUj+E0zquU0swmfug0scm2m2o/qDzY9JqNf7ajcRRbl0tfpptJC2SZqTDNSZtQtvF79oxt4vftFHGpkShMd5Om0oTHeGrC2+r3vGUdu0W31e94yjt2l8SdUJvC6wU3hdYDKGB73mUMzhgTqGZR9V0smMaLpZMY0JzhqSxN/SRpLE39JGkdT9/iHAp+/xDlIiUJmIlC5iTETwGx76w3iyNPfWXZgX39o1z4L9LH7WMWBGOCVFuoJH+S3F18riKOScTntp/PptPFrfVPXrAXNuYZ8JN7d/S08urv6xMcwJj7Sg7X0NtR0MnTHcShp0rOOruqi7MqjqSAJ5r/FaFMhGqLqAQBci1iuQCMrPL+NU+TiFespek3KN7INLjTGD95f8R4g8ynkDjnAS4NjTNiAD0sGE1mE+b9G369FVHKCtrHX1vvJjxILMliChv5EdR9xMSrWdGPD0lqim/JzlwvNnUK1mtpMem/J+q1Iq48LLzAkjXw2vnS+vSC4WM8t9jWvr73jVEgrceiKGdwvNay6ljfXFtbY0vLKVUkpdKi86lkJQgFRfxa4E79cv4M6cKd/tncRbBvI+cqQ502iWhjTSMzUmGakzILbxe/aMaL37RRxqZEoTHeTpkShMd4asLb6ve8ZR27RbfV73jKO3aW8RQm8LrBTeF1gMoYmUMzhgTqGZR9V0smMaLpZMY0J+GpLEwfSRpLE39JGkdT9/iHAp+/xDlImULmTx6ZiTFnFVCtrD5mCsxwik6sfIQqqMGtlbXDfxOqgne2v3zMVbCw6TjJemCdelrbbG489JSNFiba57dv/AJ9pxHjp81+S55hewLW8IbyvtFj1yTi+YEkDK21xzfT/AF9p4tQvzKNLEE1PARyHZQSfF6ie1xvDqKhKeFXVg6j5b7EdDPJqVBzBDcuxICgatbcW2tr9+k0YZtT+o2q1tfLuYpf6japF/t99vSH0JxtZFZbMFYMouMgg2NjEGgqcgBPKuigm9tlA8hcxrv4lS2rXsSQFFhfUnEGqCUvggcwGmRrmK706h/0KXDgFGzzqxUn1sbHvOq0yqlRYAsDa2T9RPUntKVwJ5R4xndqaIqclzd6iorWvi/W2naTHdDLUiPjfh9Oobut9c3IKm/UbT1qasAoLu4VeVeZrlV6A5tJOGeo6salLkKtyWIOo66jXtLEFrDy8P9RZXL/Gssd7MQ59Ilo0DPpFMIYVSmakwzUmbQLbxe/aMaL37RRxqZEoTHeTpkShMd4asLb6ve8ZS27RbfV73jKO3aXxFCbwusFN4XWAyRgTqGZwwJ1DMo+q6WTGNF0vmMY2ITnDUliYPpI0liYPpI0jqfv8Q4FP3+IcsIgx6HWIMemZdugGLk62UEZC3Kvc6HUXHmIxToDn6SwBtzDM15ijwgjDDmHfeSEyMYApYi8C0ZbwzSOQVh0Gmq51uLbd54vFunM2GKasoHMQn+Vh0z957vELr2nhvS5HdkJQvo5HyuBgEEZ/qPHTD8jkYEAg3BsQfKEzgnS+h5Cbac1r29dIouVstibsADsovrzHoP2jmUA3tnfrJ/tkNxC6ec5zoIPDEvTFQCwa4C/VYG2vQ+U7Z+t4b5FH+Ph+2k8j498YSiwp8hdtD0UX89Z6VSmWUAMVuw1FxcfNYkagHxDTrA+L8DS4jxNSCk2AAc2XyU6aR4frLvIM9/q8zjKvF06H6/8Ap0VG0U817XOlxaU/BeJevS53ULYlQw/yGuNpGfgzcoX9eqAPouGQgn/Ejpb3j1+DoJTXkRQuWPmeup/EWVw/XU6zx6cmv21HQyarmUKbN/yH5A/r9oiqdZmtSmakwzUmZhaL37RjRe/aKONTIlCY7ydMrKEx3hqwpvq97xtHbtFN9XveNpf1LeOnVCbwusFN4XWAiRgTqGZowPe8yhmUfVdL5jGNiLpfMYx8QnOGpLEwfSRpLE39JGkdT9/iGd+9tN9r+UCn7/EMykRHJmII8yOmM337Xj0zOdBNf8/jWco0mtO9/mT0wUVZ/wBUXVP0x4bi9yRcE+WhhcM7NTBa1+owfOcaanIB27dI4/LNp9kTT5/4un6DNxCsbBfFTyHOBrtqRJOEqs9EValk/UJKKuqhFNrsx3JB2H9ezx9FXUowuGWxngcIHooaDG4Rj+m+zITflPRgb+t5pNfqwzmqfkdCCCD+zCBTrlq4RwETlJ5z9TgaUxsCfPMYVuL3sdBcHpYDyOgEB2udCr5U2ybZHQkQ/JWfFD9iISJy6qSt9T0J626+cAOCBbpjBt1nIvOeY/QSBY+E5BuOtvtCRmwzqPsQc/c/idVYctzprr0HWdUIVVa9gup9P3k3xGkKiAcxCswa4+o2x9te0s+pl8jg6sLqQR1B0zDv+0T+iAnIt1AFgRka5jGqrzcnhDcvNygWAErFr3sSMgXHqNolzj0Ed/UmR7C3TTtt+LSpSjNSYZqTJqFt4vftGNF79oo41MrKEx3k6ZWUJjvDVhbfV73jKX9RbfV73jKO3aW8dOqE3hdYKbwusBFDA97zKGZwwJtDMo+qqWTGNiLpZMY0JzhqSxN/SRpLE39JGkdT9/iGYFP3+IcpERy5iR7/AG/iPXM5YJoW0Ew9p0hBWNb5YqNI8M1xmkeX8SR2UhG5GI0a17Tw3ZSAAHUoP9xTdi773vkZIPpPoeIOvb89P3+08iuvzesu2OcKCaWGmo6Hfym1KXhKKdDfT6bt81hhSeomKdO/8x7Z9R1/qTf8ZQqvRQAKg5FvzcnNci2osb3AvbXWFwTGxGTckjX8E5tJX+EqWBDsBnHi/wC6Wlf0w1S3hXwX1LXsDa3S1tfLylt+LN/wdc+C4HNYfLv/APZNTpoycyKyXNhcmxtuFvi85ARRHO7KSdH15gCbrce7TuGccjeJmPPqSdD/AMfK95Uyu2VHsrN/iCbeY2nicG7GsrXuWvc9bg3ntO4N7HOhHQ30/r7SGjRFMllHMQDrfCgm4A9IsePPlPsegf4kNbnB8ODn1x/EanEhi1jcDe34/ELmEnHW7JM1JhmpMm4WixntGNFjPaKONTKyhMd5OmVlCY7w1YW2G97w6W3aA2G97w6W3aW8d6pTeH1gJvC6wEUMD3vMoZnDAm0Myj6qpfMY1sRVLJjWxCc4YksTf0kaSxN/SRpHU/f4hmBT9/iHKcIEeuYkR65nOgjD2gkQ9pcYQBGkeGLjT8s3xiPO4jPaeTWOfWep8QrpT1dgotkm0+ef4pw55v8AdTPW079b5GH5Kq5dO4jbG+e32t/P3+83BcXTqg8jq9iL2OO0oq0vGrZCm5S5AYdCQQYdfdVnDyMQmpgjUXmqgsM9yT+TNqXtp+87TR5nHKfAHqFUZgpcrcINTew1JvYX23iP9WHU6WAOhFtAfXz/AAZUKuopuGJ2GeYekg4xL/7Z5V8Ys3KVPLrpFP4wzvsC9ZALgqDgjZhi484L8SiXuxuRoRuDfWdxPBmoDyspK+WpF9yDb8bRFHh0uOYM1vCQ2nKehF976RyR58rdncO+dOUMAb721YH8W/8AcdRp8qgWGOhk/EVEsaialGCg2IGuhv5R/OG15rdRbB6TqkyjTNSYZqTzvWFosZ99IxosZ99Io41MiUJjvJ02lCY7w1YW2G97w6W3aA2G97w6W3ad4nqlN4XWCm8LrCZIwJtHM7Ye951HMo+qqWTGtFUvmMa0JzhiSxN/SRpLE3wPDb1ybnz1naaYup+/xDgU9/fSHOOFLHrmIWPXMroYYW0GHtHjCBGH5fflFxh+WbYo+K/60Tx02a/JykeQa+v4t9pJxfwmjU4RG4cAu5YMxNtRbw+WZ9P8X4ZKqlHFwR3B6ifLcFwD8MzLrUpMb8v1KwOhI3HpNP21Pl48mc1lak/6T4VUZix5XVuQobg63ubeRX8z6yswGpwBI6CAtz2tbBtrLaqjFr6Y6zP8mcyu3Y8J+IcZ+lZOW7W1B05fWJo1ahQGyC9yCLhiLnPUSt+Fpt42UMTbUljjA1huvMRpYAe7CHUKy7QuHJUmxC2bmP0jUFQMEnQ+Ug+IoW+a1gb6Bb2tvpPXqGyA2NxjXzP3zI+Jo2XQ3swJ0GcknqZZ1lnPjx0DhmqKSgXd9bjFjoL6fxFsKjkspLDUXBI+a91F/wBp6/GqCuARrcEZO35kjU25fA1gxsFAABJGRp5/iOV5M5p561eRSpvfm1GVNhax97RwVWAPKX0FjzHQWxppEJSdj+nYsB0A++uIHF0lU2W1rXHi/wDUunmtye2ZqTp08r9YLQBmdOijjE2j1xOnQ1YW31e94yjt2nTp1471Su/pD6zp0JE7CdQzMnSj6rpfMYxsTp0Jzhq7SxMH0nTpWkdT9/iH/c6dIUKWPXMydKsOMLadOmmKght8s6dNsXPO4vPaePV+r1mzoMnn/ILh/f2lDZnToBx4c+BBb+J06M6nr4Hb9zJ63yv/AM//AAE2dKxzS8Tjv/5SWrhfX+VnToo835E/Df8A6P8A8G/eTcRmdOjeW8f/2Q==');
+        }
+        .boton-container {
+          text-align: center;
+      }
+        .pagina-btn {
+            background-color: #3498db; /* Color de fondo */
+            color: #fff; /* Color de texto */
+            padding: 5px 10px; /* Espaciado interno */
+            font-size: 15px; /* Tamaño de fuente */
+            border: none; /* Sin borde */
+            cursor: pointer; /* Cursor de puntero */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición de color de fondo */
+            display: inline-block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pagina-btn:hover {
+            background-color: #2980b9; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+        }
