@@ -1,0 +1,147 @@
+<html manifest="cache.manifest">
+
+<!-- ------------------------------1ª LAYOUT DEL TITULO----------------------------------------------------->
+<div id="contenedor" style="width:1250px">
+
+    <div id="cabecera" style="background-color:grey;"> 
+    <h1 style="margin-bottom: -21px; background-color: rgb(196, 117, 0); width: 1250px;text-align:center;"> Smart Room Project </h1>
+    </div>
+<!------------------------------------2º layout del menu---------------------------------------------------->
+    <div id="cabecera" style="background-color:rgb(155, 115, 5);height:30px;"> 
+        <style>
+            .boton-derecha {
+                float: right;
+            }
+        </style>
+        <h1 style="margin-bottom: 20px; background-color: rgb(141, 141, 141); width: 1250px;text-align: right;"></h1>
+        <b style="color: #000000;"><strong>Menú: </strong></b>
+        <a href="config.html">
+            <button type="button">Introducir Datos de la habitaciones y sensores</button>
+        </a>
+        <a href="minombre.html">
+            <button type="button">Introducir Nombre de usuario</button>
+        </a>
+        <style>
+          #mensaje-bienvenida {
+              float: right; 
+              margin-right:20px;
+          }
+      </style>
+
+        <div id="mensaje-bienvenida"></div>
+    </div>
+<!---------------------------script del mensaje de bienvenida------------------------------------------------>
+    <script>
+          const nombreAlmacenado = localStorage.getItem("fname");
+          if (nombreAlmacenado) {
+              const mensajeBienvenida = document.getElementById("mensaje-bienvenida");
+              mensajeBienvenida.textContent = "Hola " + nombreAlmacenado + ": Bienvenido a smartroom";
+          }
+      </script>
+<!------------------------3ªLAYOUT DEL CONTENEDOR IZQUIERDO (FORMULARIO)----------------------------------->
+    <div id="menu" style="background-color:#816405;height:530px;width:625px;float:left;">
+    <h1 style="color: #0a0a01; float:center; text-align: center;"><strong>Datos de la habitación:</h1> </strong></b>
+    <ul>
+      <li>País: <span id="pais"></span></li><br>
+      <li>Ciudad: <span id="ciudad"></span></li><br>
+      <li>Coordenadas GPS: <span id="coordenadasGoogleMaps"></span></li><br>
+      <li>Mapa URL: <span id="url"></span></li><br>
+      <li> Foto: <span id="foto"></span></li><br>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7x1o0zF1jaDqJZ7mqGLdmhWlZyoVBhC8eWw&usqp=CAU" alt="Descripción de la imagen"class="centrar"><br><br>
+      <li> Contraseña: <span id="contraseña"></span></li><br>
+    </ul>
+    </div>
+    <!------------------------Estilo para centrar la imagen--------------------------------------------------->
+    <style>
+        .centrar {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+    <!----------------------------script para pasar los datos de config.html---------------------------------->
+    <script>
+     const urlParams = new URLSearchParams(window.location.search);
+      document.getElementById("pais").textContent = urlParams.get("pais");
+      document.getElementById("ciudad").textContent = urlParams.get("ciudad");
+      //document.getElementById("gps").textContent = urlParams.get("gps");
+      const enlaceGoogleMaps = localStorage.getItem("enlaceGoogleMaps");
+      document.getElementById("coordenadasGoogleMaps").innerHTML = `<a href="${enlaceGoogleMaps}" target="_blank">${enlaceGoogleMaps}</a>`;
+      document.getElementById("url").textContent = urlParams.get("url");
+  </script>
+
+
+<!----------------------- 4º LAYOUT DEL CONTENEDOR DERECHO (SENSORES)--------------------------------------------->
+    <div id="contenido" style="background-color: #724502;text-align:center; height: 530px; width: 625px;float:right;"> <!--4º LAYOUT DEL CONTENEDOR DERECHO (SENSORES)-->
+        
+            <h1>Datos de los sensores:</h1><br>
+
+        <style>
+            table, td, th {
+              border: 3px solid rgb(0, 0, 0); 
+              text-align: center;
+              float: center;
+              margin: 0 auto;
+            }
+            
+            #table1 {
+              border-collapse: collapse;
+              border-color: rgb(0, 0, 0);
+              width: 80%;
+              float: center;
+              padding: 10px;
+            }
+            .table-centrada {
+                width: 80%;
+                padding: 10px;
+                height: 70%;
+        }
+            </style>
+            </head>
+            <body>
+            
+            <table class="table-centrada" border="1">
+              <tr>
+                <th>Sensor</th>
+                <th>Activo</th>
+            </tr>
+            <tr>
+                <td>Temperatura</td>
+                <td id="temperaturaActivo"></td>
+            </tr>
+            <tr>
+                <td>Humedad</td>
+                <td id="humedadActivo"></td>
+            </tr>
+            <tr>
+                <td>Nivel de sonido</td>
+                <td id="sonidoActivo"></td>
+            </tr>
+            <tr>
+                <td>Nivel de luz</td>
+                <td id="luzActivo"></td>
+            </tr>
+            <tr>
+                <td>Movimiento</td>
+                <td id="movimientoActivo"></td>
+            </tr>
+            </table>
+<!-----------------------Script para visualizar si se ha pulsado el checkbox--------------------------------------->
+<script>
+        document.getElementById("temperaturaActivo").textContent = localStorage.getItem("temperaturaActivo") === "true" ? "Sí" : "No";
+        document.getElementById("humedadActivo").textContent = localStorage.getItem("humedadActivo") === "true" ? "Sí" : "No";
+        document.getElementById("sonidoActivo").textContent = localStorage.getItem("sonidoActivo") === "true" ? "Sí" : "No";
+        document.getElementById("luzActivo").textContent = localStorage.getItem("luzActivo") === "true" ? "Sí" : "No";
+        document.getElementById("movimientoActivo").textContent = localStorage.getItem("movimientoActivo") === "true" ? "Sí" : "No";
+
+</script>
+
+
+    </div>
+
+  <!-----------------------------5º layout del pie de página--------------------------------------------->
+    <div id = "pie" style="background-color: rgb(83, 197, 127);clear:both;text-align:center;width: 1250px; height: 30px;"> <!--4ª LAYOUT DEL PIE-->
+    <h1 style="margin-bottom: 20px; background-color: rgb(255, 234, 47); width: 1250px;text-align:center;"> Universidad de Alcalá </h1>
+    </div>
+
+</div>
+</html>
