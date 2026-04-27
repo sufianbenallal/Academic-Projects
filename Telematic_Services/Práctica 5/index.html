@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>Inicio</title>
+    <!-- Agrega el código JavaScript dentro de la etiqueta <script> en línea -->
+    <script type="text/javascript">
+        // Agrega esta función para manejar el recorte de URL
+        function shortenUrl() {
+            var originalUrl = document.getElementById('original_url').value;
+
+            // Realiza una solicitud AJAX para recortar la URL
+            fetch('/shorten_url', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ original_url: originalUrl }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Construye la URL de redirección con el código generado
+                var shortenedUrl = window.location.origin + '/URL/' + data.code;
+
+                // Muestra un mensaje con la URL acortada
+                alert('URL acortada exitosamente:\n' + shortenedUrl);
+            })
+            .catch(error => {
+                console.error('Error al acortar la URL:', error);
+            });
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+    {% if session.logged_in %}  
+        <h1>Bienvenido</h1>
+        <p>Seleccione una opción:</p>
+        
+        <!-- Formulario para acortar URL -->
+        <form onsubmit="shortenUrl(); return false;">
+            <label for="original_url">URL Original:</label>
+            <input type="text" id="original_url" name="original_url" required>
+            <button type="button" onclick="shortenUrl();">Acortar URL</button>
+        </form>
+        
+    {% endif %}
+{% endblock %}
