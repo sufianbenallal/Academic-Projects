@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Zona Administrador</title>
+</head>
+<body style="background-color: #1e1e1e; color: white; font-family: Arial;">
+    <h1>Bienvenido, SUFIAN</h1>
+    <p>Has accedido al modo SuperUsuario.</p>
+    <h2>Histórico de peticiones</h2>
+<pre id="log-content" style="background:#222; color:#0f0; padding:1em; overflow:auto; max-height:300px;"></pre>
+
+<script>
+    // Cargar logs al cargar la página
+    fetch('/logs')
+        .then(res => res.text())
+        .then(texto => {
+            document.getElementById('log-content').innerText = texto;
+        })
+        .catch(error => {
+            document.getElementById('log-content').innerText = 'No se pudieron cargar los logs.';
+        });
+</script>
+
+    
+</body>
+</html>
+
